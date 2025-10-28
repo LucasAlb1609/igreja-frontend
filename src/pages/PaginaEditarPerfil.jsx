@@ -35,7 +35,7 @@ function PaginaEditarPerfil() {
     const fetchProfile = async () => {
       if (!authTokens) return;
       try {
-        const response = await fetch(`${API_URL}/users/me/`, {
+        const response = await fetch(`${API_URL}/api/users/me/`, {
           headers: { 'Authorization': `Bearer ${authTokens.access}` }
         });
         if (!response.ok) throw new Error('Falha ao carregar dados do perfil.');
@@ -283,5 +283,6 @@ function PaginaEditarPerfil() {
     </div>
   );
 }
+
 
 export default PaginaEditarPerfil;
