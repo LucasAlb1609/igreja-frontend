@@ -87,7 +87,7 @@ function PaginaUsuariosPendentes() {
         return;
       }
       try {
-        const response = await fetch(`${API_URL}/admin/pending-users/`, {
+        const response = await fetch(`${API_URL}/api/admin/pending-users/`, {
           headers: { 'Authorization': `Bearer ${authTokens.access}` }
         });
         if (!response.ok) throw new Error('Falha ao buscar usuários pendentes.');
@@ -104,7 +104,7 @@ function PaginaUsuariosPendentes() {
   
   const handleViewDetails = async (userId) => {
     try {
-      const response = await fetch(`${API_URL}/admin/users/${userId}/`, {
+      const response = await fetch(`${API_URL}/api/admin/users/${userId}/`, {
         headers: { 'Authorization': `Bearer ${authTokens.access}` }
       });
       if (!response.ok) throw new Error('Não foi possível carregar os detalhes do usuário.');
@@ -124,7 +124,7 @@ function PaginaUsuariosPendentes() {
   const handleApprove = async (userId, role) => {
     if (!window.confirm(`Tem certeza que deseja aprovar este usuário como ${role}?`)) return;
     try {
-      const response = await fetch(`${API_URL}/admin/users/${userId}/approve/`, {
+      const response = await fetch(`${API_URL}/api/admin/users/${userId}/approve/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -142,7 +142,7 @@ function PaginaUsuariosPendentes() {
   const handleReject = async (userId) => {
     if (!window.confirm('Tem certeza que deseja rejeitar e excluir este cadastro?')) return;
     try {
-      const response = await fetch(`${API_URL}/admin/users/${userId}/reject/`, {
+      const response = await fetch(`${API_URL}/api/admin/users/${userId}/reject/`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${authTokens.access}` }
       });
@@ -214,5 +214,6 @@ function PaginaUsuariosPendentes() {
     </>
   );
 }
+
 
 export default PaginaUsuariosPendentes;
