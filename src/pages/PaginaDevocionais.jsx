@@ -13,7 +13,7 @@ function PaginaDevocionais() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${API_URL}/devocionais/`);
+        const response = await fetch(`${API_URL}/api/devocionais/`);
         if (!response.ok) throw new Error('Não foi possível buscar as devocionais.');
         const data = await response.json();
         setDevocionais(data);
@@ -113,5 +113,6 @@ function PaginaDevocionais() {
     </div>
   );
 }
+
 
 export default PaginaDevocionais;
