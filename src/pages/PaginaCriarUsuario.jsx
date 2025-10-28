@@ -103,7 +103,7 @@ function PaginaCriarUsuario() {
     }
 
     try {
-      const response = await fetch(`${API_URL}/admin/users/`, {
+      const response = await fetch(`${API_URL}/api/admin/users/`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${authTokens.access}` },
         body: dataToSend,
@@ -324,5 +324,6 @@ function PaginaCriarUsuario() {
     </div>
   );
 }
+
 
 export default PaginaCriarUsuario;
