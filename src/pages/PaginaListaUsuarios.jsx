@@ -29,7 +29,7 @@ function PaginaListaUsuarios() {
 
     setLoading(true);
     try {
-      const response = await fetch(`${API_URL}/api/dmin/users/?${params.toString()}`, {
+      const response = await fetch(`${API_URL}/api/admin/users/?${params.toString()}`, {
         headers: { 'Authorization': `Bearer ${authTokens.access}` }
       });
       if (response.status === 401) {
@@ -163,3 +163,4 @@ function PaginaListaUsuarios() {
 
 
 export default PaginaListaUsuarios;
+
