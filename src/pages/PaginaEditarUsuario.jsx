@@ -41,7 +41,7 @@ function PaginaEditarUsuario() {
         return;
       }
       try {
-        const response = await fetch(`${API_URL}/admin/users/${userId}/`, {
+        const response = await fetch(`${API_URL}/api/admin/users/${userId}/`, {
           headers: { 'Authorization': `Bearer ${authTokens.access}` }
         });
         if (!response.ok) throw new Error('Falha ao carregar dados do usuário.');
@@ -101,7 +101,7 @@ function PaginaEditarUsuario() {
     }
 
     try {
-      const response = await fetch(`${API_URL}/admin/users/${userId}/`, {
+      const response = await fetch(`${API_URL}/api/dmin/users/${userId}/`, {
         method: 'PATCH',
         headers: { 'Authorization': `Bearer ${authTokens.access}` },
         body: dataToSend,
@@ -333,5 +333,6 @@ function PaginaEditarUsuario() {
     </div>
   );
 }
+
 
 export default PaginaEditarUsuario;
