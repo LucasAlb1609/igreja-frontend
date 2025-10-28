@@ -15,8 +15,8 @@ function HomePage() {
     const fetchData = async () => {
       try {
         const [configResponse, devocionalResponse] = await Promise.all([
-          fetch(`${API_URL}/configuracao/`),
-          fetch(`${API_URL}/devocionais/recente/`)
+          fetch(`${API_URL}/api/configuracao/`),
+          fetch(`${API_URL}/api/devocionais/recente/`)
         ]);
 
         if (!configResponse.ok || !devocionalResponse.ok) {
@@ -54,5 +54,6 @@ function HomePage() {
     </div>
   );
 }
+
 
 export default HomePage;
