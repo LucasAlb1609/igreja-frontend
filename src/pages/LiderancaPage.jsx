@@ -77,7 +77,7 @@ function LiderancaPage() {
   useEffect(() => {
     const fetchLideranca = async () => {
       try {
-        const response = await fetch(`${API_URL}/lideranca/`);
+        const response = await fetch(`${API_URL}/api/lideranca/`);
         if (!response.ok) throw new Error('Não foi possível buscar os dados de liderança.');
         const data = await response.json();
         setSecoes(data);
@@ -140,5 +140,6 @@ function LiderancaPage() {
     </div>
   );
 }
+
 
 export default LiderancaPage;
