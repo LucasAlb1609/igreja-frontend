@@ -18,7 +18,7 @@ function PaginaVerUsuario() {
         return;
       }
       try {
-        const response = await fetch(`${API_URL}/admin/users/${userId}/`, {
+        const response = await fetch(`${API_URL}/api/admin/users/${userId}/`, {
           headers: { 'Authorization': `Bearer ${authTokens.access}` }
         });
         if (!response.ok) {
@@ -159,5 +159,6 @@ function PaginaVerUsuario() {
     </div>
   );
 }
+
 
 export default PaginaVerUsuario;
