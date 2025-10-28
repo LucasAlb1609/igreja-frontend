@@ -85,7 +85,7 @@ function PaginaGerarCartaConvite() {
     };
 
     try {
-      const response = await fetch(`${API_URL}/documentos/gerar-carta-convite/`, {
+      const response = await fetch(`${API_URL}/api/documentos/gerar-carta-convite/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -177,5 +177,6 @@ function PaginaGerarCartaConvite() {
     </div>
   );
 }
+
 
 export default PaginaGerarCartaConvite;
