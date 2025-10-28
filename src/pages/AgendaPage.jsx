@@ -11,7 +11,7 @@ function AgendaPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${API_URL}/aí/genda/`);
+        const response = await fetch(`${API_URL}/api/genda/`);
         if (!response.ok) {
           throw new Error('Não foi possível buscar os dados da agenda.');
         }
@@ -122,3 +122,4 @@ function AgendaPage() {
 
 
 export default AgendaPage;
+
