@@ -86,7 +86,7 @@ function PaginaEditarPerfil() {
     }
     
     try {
-      const response = await fetch(`${API_URL}/users/me/`, {
+      const response = await fetch(`${API_URL}/api/users/me/`, {
         method: 'PATCH',
         headers: { 'Authorization': `Bearer ${authTokens.access}` },
         body: dataToSend,
@@ -286,3 +286,4 @@ function PaginaEditarPerfil() {
 
 
 export default PaginaEditarPerfil;
+
