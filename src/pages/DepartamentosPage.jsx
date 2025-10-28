@@ -60,7 +60,7 @@ function DepartamentosPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${API_URL}/departamentos/`);
+        const response = await fetch(`${API_URL}/api/departamentos/`);
         if (!response.ok) throw new Error('Não foi possível buscar os dados dos departamentos.');
         const data = await response.json();
         setDepartamentos(data);
@@ -125,5 +125,6 @@ function DepartamentosPage() {
     </div>
   );
 }
+
 
 export default DepartamentosPage;
