@@ -29,7 +29,7 @@ function PaginaListaUsuarios() {
 
     setLoading(true);
     try {
-      const response = await fetch(`${API_URL}/admin/users/?${params.toString()}`, {
+      const response = await fetch(`${API_URL}/api/dmin/users/?${params.toString()}`, {
         headers: { 'Authorization': `Bearer ${authTokens.access}` }
       });
       if (response.status === 401) {
@@ -60,7 +60,7 @@ function PaginaListaUsuarios() {
     if (!window.confirm(`Tem certeza que deseja excluir o usuário ${usuarioNome}? Esta ação não pode ser desfeita.`)) return;
 
     try {
-      const response = await fetch(`${API_URL}/admin/users/${usuarioId}/`, {
+      const response = await fetch(`${API_URL}/api/dmin/users/${usuarioId}/`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${authTokens.access}` }
       });
@@ -160,5 +160,6 @@ function PaginaListaUsuarios() {
     </div>
   );
 }
+
 
 export default PaginaListaUsuarios;
