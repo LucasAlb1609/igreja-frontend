@@ -19,7 +19,7 @@ function PaginaPerfil() {
       }
 
       try {
-        const response = await fetch(`${API_URL}/users/me/`, {
+        const response = await fetch(`${API_URL}/api/users/me/`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -165,5 +165,6 @@ function PaginaPerfil() {
     </div>
   );
 }
+
 
 export default PaginaPerfil;
