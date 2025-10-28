@@ -14,7 +14,7 @@ function PaginaDashboard() {
     if (user?.papel === 'secretario') {
       const fetchStats = async () => {
         try {
-          const response = await fetch(`${API_URL}/admin/dashboard-stats/`, {
+          const response = await fetch(`${API_URL}/api/admin/dashboard-stats/`, {
             headers: { 'Authorization': `Bearer ${authTokens.access}` }
           });
           if (!response.ok) throw new Error('Falha ao buscar estatísticas.');
@@ -36,7 +36,7 @@ function PaginaDashboard() {
   const handleGerarBatismo = async () => {
     setPdfError(null); // Limpa erros antigos
     try {
-      const response = await fetch(`${API_URL}/documentos/gerar-certificado-batismo/`, {
+      const response = await fetch(`${API_URL}/api/documentos/gerar-certificado-batismo/`, {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${authTokens.access}` }
       });
@@ -164,5 +164,6 @@ function PaginaDashboard() {
     </div>
   );
 }
+
 
 export default PaginaDashboard;
